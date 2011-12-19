@@ -37,9 +37,9 @@ public:
 							board.piece(x, y).type = PieceType.darkBrick;
 							board.piece(x, y).draw;
 						}
-						foreach1: foreach(i, unit; unitList) {
-							if ( i == 2 )
-								break foreach1;
+						foreach1: foreach(i, unit; unitList[0..2]) { //2 should number of players
+							//if ( i == 2 )
+							//	break foreach1;
 							if (   x >= unit.xpos
 								&& x <  unit.xpos + 24
 								&& y >= unit.ypos
