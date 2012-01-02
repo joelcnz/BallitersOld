@@ -41,6 +41,7 @@ public:
 	Constructor that uses the SetUp object
 	+/
 	this(string[] args) {
+		args=["-m full -wxh 640 480"]; //1024 768"];
 		(new SetUp(args)).setUp(spriteSet, unitList, board, m_fps, m_popUp, m_display, m_gameOver,
 								m_larverBombBlow, m_pointer);
 	}
@@ -48,7 +49,8 @@ public:
 	/++
 	Contains the main loop
 	+/
-	void run() {
+	bool run() {
+		//g_startGame[uniform(0, $)].play;
 		void holdKey(int hkey) {
 			while( key[ hkey ] ) {
 				poll_input;
@@ -60,13 +62,13 @@ public:
 		lazersTimer.start;
 		secondTimer.start;
 		int frameCount = 0, currentFPS = 0;
-		TKey[5] tKeyPopUps;
+		TKey[6] tKeyPopUps;
 		foreach(i, ref tk; tKeyPopUps) {
 			tk=new TKey(ALLEGRO_KEY_1+i);
 		}
-		PieceType[5] pieceTypePopUps;
+		PieceType[6] pieceTypePopUps;
 		with(PieceType)
-			 pieceTypePopUps=[weakBrick, shieldBoost, weaponBoostThree, weaponBoostTen, larverBomb];
+			 pieceTypePopUps=[weakBrick, shieldBoost, weaponBoostThree, weaponBoostTen, larverBomb, lazerBeam];
 
 		TKey tKeyEnter;
 		tKeyEnter = new TKey( ALLEGRO_KEY_ENTER );
@@ -151,6 +153,7 @@ public:
 					if (doesMatch(unit.mainType, [UnitType.lazer, UnitType.mine]))
 						unitList.remove( unit );
 			
-		} while( ! key[ALLEGRO_KEY_ESCAPE] );
+		} while(! key[ALLEGRO_KEY_ESCAPE] && ! key[ALLEGRO_KEY_ENTER]);
+		return key[ALLEGRO_KEY_ENTER] != 0;
 	}
 }

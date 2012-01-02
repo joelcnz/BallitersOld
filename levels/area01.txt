@@ -1,0 +1,26 @@
+1 40 25
+wBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBw
+wBBBBBBBB.............................Bw
+wBBBBBB...............................Bw
+wBBBB.................................Bw
+wBBB..................................Bw
+wBBB.........BBB......................Bw
+wBB........BBB........................Bw
+wBB.......BB..........................Bw
+wB........B...........................Bw
+wB....................................Bw
+wB....................................Bw
+wB....................................Bw
+wB........................BBB.........Bw
+wB.......................BB..........BBw
+wB....................BBBB...........BBw
+wB..................................BBBw
+wB..................................BBBw
+wB.................................BBBBw
+wB................................BBBBBw
+wB..............................BBBBBBBw
+wB...........................BBBBBBBBBBw
+wBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBw
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww

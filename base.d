@@ -11,7 +11,7 @@ alias double dub;
 
 enum UnitType { ship, lazer, mine };
 enum PieceType { blank, weakBrick, brick, darkBrick, shieldBoost, weaponBoostThree, weaponBoostTen,
-	             larverBomb };
+	             larverBomb, lazerBeam };
 enum DisplayType { board, units, text, fpsBar, gameOver, flip };
 enum Show: int { fpsBar = 1, debugInfo = 2, players = 4 };
 enum ShipState {good, blowingUp, destroyed};
@@ -35,7 +35,7 @@ DebugInfo g_debugInfo;
 static this() {
 	g_debugInfo = new DebugInfo;
 	g_gameType = GameType.normal;
-	g_ballStartPostions = [180, 400,  720, 100, 400, 200];
+	g_ballStartPostions = [180, 400, 720, 100, 400, 200, 500, 200];
 }
 
 dub[] g_ballStartPostions;
@@ -51,6 +51,10 @@ Snd g_morris;
 Snd[] g_smallBlows;
 Snd[] g_medBlows;
 Snd[] g_largeBlows;
+Snd[] g_win;
+Snd[] g_start;
+Snd[] g_lazerShots;
+Snd[] g_startGame;
 
 //smallBlows[uniform(0,$)].play;
 

@@ -2,6 +2,9 @@
 //#was 90
 module popup;
 
+version = PopNormal;
+//version = PopMiddle;
+
 import std.stdio;
 import std.random;
 import std.datetime;
@@ -15,12 +18,15 @@ private:
 		shieldBoost      = 80,
 		weaponBoostThree = 22,
 		weaponBoostTen   = 62,
-		larverBomb       = 30 }; //#was 90
+		larverBomb       = 30, //#was 90
+		lazerBeam        = 150
+	};
 	int m_weakBrickTimer,
 		m_shieldBoostTimer,
 		m_weaponBoostThreeTimer,
 		m_weaponBoostTenTimer,
-		m_larverBombTimer;
+		m_larverBombTimer,
+		m_lazerBeamTimer;
 	StopWatch m_second;
 	Board m_board;
 	UnitList m_unitList;
@@ -68,6 +74,12 @@ public:
 				place( PieceType.larverBomb );
 			}
 
+			checkedCount( m_lazerBeamTimer ); //#resume this pop up
+			if ( m_lazerBeamTimer == TimeOut.lazerBeam || forcePopUpId == PieceType.lazerBeam ) {
+				m_lazerBeamTimer = 0;
+				place( PieceType.lazerBeam );
+			}
+
 			if ( forcePopUpId == PieceType.blank )
 				m_second.reset;
 		}
@@ -76,16 +88,18 @@ public:
 	void place( PieceType pieceType ) { // not called all the time
 		double fx, fy;
 		int x, y;
-		bool shipNear() {
+		bool shipNear(double radius = 200) {
 			foreach( shipId; 0 .. 2 ) {
 				if ( pieceType == PieceType.weakBrick
-					&& distance( fx * 24 + 24 + 3, fy * 24 + 24 + 3, m_unitList[shipId].xpos + 12, m_unitList[shipId].ypos + 12 ) < 200 )
+					&& distance( fx * 24 + 24 + 3, fy * 24 + 24 + 3, m_unitList[shipId].xpos + 12, m_unitList[shipId].ypos + 12 ) < radius )
 					return true;
-				if ( distance( fx * 24 + 12, fy * 24 + 12, m_unitList[shipId].xpos + 12, m_unitList[shipId].ypos + 12 ) < 200 )
+				if ( distance( fx * 24 + 12, fy * 24 + 12, m_unitList[shipId].xpos + 12, m_unitList[shipId].ypos + 12 ) < radius )
 					return true;
 			}
 			return false;
 		}
+
+version(PopNormal) {
 		int counter = 0;
 		do {
 			if ( pieceType == PieceType.weakBrick ) {
@@ -98,9 +112,17 @@ public:
 			x = cast(int)fx;
 			y = cast(int)fy;
 			++counter;
-		} while( m_board.map[y][x].type != PieceType.darkBrick || shipNear && counter < 1_000 );
-
-		if ( counter < 1_000 ) {
+			if (counter > 1_000)
+				break;
+		} while( m_board.map[y][x].type != PieceType.darkBrick || shipNear );
+}
+version(PopMiddle) {
+		fx=x=20; fy=y=11;
+		if (pieceType == PieceType.weakBrick)
+			x--,
+			y--;
+}
+		if (! shipNear(80)) {
 			if ( pieceType == PieceType.weakBrick )
 				foreach( gy; y .. y + 3 )
 					foreach( gx; x .. x + 3 ) {
@@ -109,12 +131,11 @@ public:
 							map.type = pieceType,
 							map.draw;
 					}
-			else {
-				auto map = m_board.map[y][x];
-				map.type = pieceType;
-				map.draw;
-			}
-		} else // counter b < 1_000
-			writeln( "Pop up placing timed out..." );
+				else {
+					auto map = m_board.map[y][x];
+					map.type = pieceType;
+					map.draw;
+				}
+		}
 	}
 }

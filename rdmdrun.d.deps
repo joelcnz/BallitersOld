@@ -1,0 +1,5 @@
+binary    C:\jpro\dmd2\windows\bin\dmd.exe
+version   v2.057
+config    C:\jpro\dmd2\windows\bin\sc.ini
+parse     rdmdrun
+Error: cannot read file rdmdrun.d

@@ -1,0 +1,58 @@
+<html><head><META HTTP-EQUIV="Content-Type" content="text/html">
+</head><body><pre>
+<table width=100% bgcolor=#CFCFE5><tr><td>
+	<font face=arial size=+3>Build Log</font>
+</table>
+<table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Building Release\Balliters.exe
+</font></table>
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Command Line
+</font></table>
+set PATH=c:\jpro\dmd2\windows\bin;C:\Program Files\Microsoft SDKs\Windows\v6.0A\\bin;%PATH%
+
+echo base.d &gt;Release\Balliters.build.rsp
+echo board.d &gt;&gt;Release\Balliters.build.rsp
+echo display.d &gt;&gt;Release\Balliters.build.rsp
+echo fps.d &gt;&gt;Release\Balliters.build.rsp
+echo game.d &gt;&gt;Release\Balliters.build.rsp
+echo gameover.d &gt;&gt;Release\Balliters.build.rsp
+echo main.d &gt;&gt;Release\Balliters.build.rsp
+echo menu.d &gt;&gt;Release\Balliters.build.rsp
+echo piece.d &gt;&gt;Release\Balliters.build.rsp
+echo pointer.d &gt;&gt;Release\Balliters.build.rsp
+echo popup.d &gt;&gt;Release\Balliters.build.rsp
+echo setup.d &gt;&gt;Release\Balliters.build.rsp
+echo shield.d &gt;&gt;Release\Balliters.build.rsp
+echo tkey.d &gt;&gt;Release\Balliters.build.rsp
+echo larverbombblow.d &gt;&gt;Release\Balliters.build.rsp
+echo lazer.d &gt;&gt;Release\Balliters.build.rsp
+echo mine.d &gt;&gt;Release\Balliters.build.rsp
+echo ship.d &gt;&gt;Release\Balliters.build.rsp
+echo unit.d &gt;&gt;Release\Balliters.build.rsp
+echo unitlist.d &gt;&gt;Release\Balliters.build.rsp
+echo weakbrickblow.d &gt;&gt;Release\Balliters.build.rsp
+
+dmd -release -X -Xf&quot;Release\Balliters.json&quot; -deps=&quot;Release\Balliters.dep&quot; -of&quot;Release\Balliters.exe&quot; -map &quot;Release\Balliters.map&quot; -L/NOMAP @Release\Balliters.build.rsp
+if errorlevel 1 goto reportError
+if not exist &quot;Release\Balliters.exe&quot; (echo &quot;Release\Balliters.exe&quot; not created! &amp;&amp; goto reportError)
+
+goto noError
+
+:reportError
+echo Building Release\Balliters.exe failed!
+
+:noError
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Output
+</font></table>
+1) Shooting weakbricks [#] 2) New controls [## ] 3) Result screen [# ] 4) Start menu [ ] 5) Save game results [ ] 7) Draw in better order [ ] 8) clean up code [. ] 9) Draw stuff [ ] 10) Control problem 11) Ships getting stuck on each other [ ]
+Mon Dec 12, 2011 - Updating Dallegro5
+OPTLINK (R) for Win32  Release 8.00.12
+Copyright (C) Digital Mars 1989-2010  All rights reserved.
+http://www.digitalmars.com/ctg/optlink.html
+c:\jpro\dmd2\windows\bin\..\lib\libjeca.lib(base) 
+ Error 42: Symbol Undefined _al_init_acodec_addon
+--- errorlevel 1
+Building Release\Balliters.exe failed!
+</body></html>

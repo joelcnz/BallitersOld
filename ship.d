@@ -1,8 +1,8 @@
-//#obsolete
+//#get rid of the foreach
 //#use reset after these
-//#probably remove
 //#less readable code
 //#note this
+
 //Removing through a loop in a class in the loop doesn't work properly except for remove( this )
 module ship;
 
@@ -46,8 +46,11 @@ public:
 	@property ref auto shield() { return m_shield; }
 	@property ref auto state() { return m_state; }
 	@property ref auto timer() { return m_timer; }
-	int shipId() { return m_id; }
+	@property ref auto idCurrent() { return m_idcurrent; }
+	@property auto shipId() { return m_id; } // getter
 	
+	this() {}
+
 	this( Bmp sprite0, Bmp[] blowUpGfx0, int x, int y, int[] keyCon ) {
 		assert( keyCon.length == 7, "Wrong number of key bindings" );
 		foreach( i, k; [& kup,
@@ -96,6 +99,7 @@ public:
 		if ( m_shield.amount <= 0 )
 			m_shield.amount = 0,
 			m_state = ShipState.blowingUp,
+			g_win[uniform(0, $)].play;
 			m_blowFrame = 0,
 			m_blowUpTimer.reset;
 		m_flash = true;
@@ -124,14 +128,14 @@ public:
 			alias aimDiry disty;
 			al_draw_line( xpos + sprite.width / 2 - 2, ypos + sprite.height / 2 - 2,
 							xpos + sprite.width / 2 - 2 + distx, ypos + sprite.height / 2 - 2 + disty, Colour.yellow, 3 );
-
+/+
 			al_draw_line( xpos + sprite.width / 2 - 2, ypos + sprite.height / 2 - 2,
 						 xpos + sprite.width / 2 - 2 + moveDirx * 20, ypos + sprite.height / 2 - 2 + moveDiry * 20,
 						Colour.red, 3 );
 			if (m_debugFlag)
 				al_draw_filled_circle(xpos + sprite.width / 2 - 2, ypos + sprite.height / 2 - 2,
 									  10, Colour.blue);
-
++/
 			m_shield.draw;
 			if ( m_weaponBoosts > 0 )
 				with( m_weaponBoostsText ) {
@@ -161,6 +165,7 @@ public:
 
 	void altControl(Board board, UnitList unitList) {
 		if ( m_state == ShipState.destroyed )
+			//m_state = ShipState.good;
 			return;
 		if ( m_state == ShipState.blowingUp ) {
 			if ( m_blowUpTimer.peek().msecs > 100 ) {
@@ -177,10 +182,6 @@ public:
 			if ( m_flash && m_flashTimer.peek().msecs > 100 )
 				m_flash = false;
 
-			//#probably remove
-			if (m_flash)
-				return;
-
 			auto otherPlayer = unitList[player == 0 ? 1 : 0];
 
 			poll_input;
@@ -194,17 +195,28 @@ public:
 			double dx,dy, lastMoveDirx = moveDirx, lastMoveDiry = moveDiry;
 			xyaim( dx, dy, m_inc, faceAngle );
 			bool isKeyUp = false, isKeyDown = false;
-			if ( key[ kup ] )
+			if ( key[ kup ] ) {
 				isKeyUp=true,
-				moveDirx += dx,
+				moveDirx += dx;
+				if (moveDirx > 1)
+					moveDirx=1;
 				moveDiry += dy;
-			if ( key[ kdown ] )
+				if (moveDiry > 1)
+					moveDiry=1;
+			}
+			if ( key[ kdown ] ) {
 				isKeyDown=true,
-				moveDirx -= dx,
+				moveDirx -= dx;
+				if (moveDirx < -1)
+					moveDirx=-1;
 				moveDiry -= dy;
+				if (moveDiry < -1)
+					moveDiry=-1;
+			}
 			// test for speed out side limit, if so, then set back at previous speed
+			//#get rid of the foreach
 			m_debugFlag=false;
-			foreach(mDir; [moveDirx, moveDiry])
+			foreach(mDir; [moveDirx, moveDiry]) {
 				if (mDir < -1 || mDir > 1) {
 					m_debugFlag=true;
 					moveDirx = lastMoveDirx,
@@ -223,18 +235,31 @@ public:
 					xyaim(moveDirx, moveDiry, 1f, moveAngle);
 					//break;
 				}
+			}
 
+			// slow down when neither up or down keys are pressed
 			if (isKeyUp + isKeyDown == false) { //#less readable code
 				double sdx,sdy; // sd - Slow Down
 				xyaim(sdx, sdy, 0.003, getAngle(xpos, ypos, xpos+moveDirx, ypos+moveDiry));
 				moveDirx -= sdx;
 				moveDiry -= sdy;
+				/+
+				moveDirx -= sdx;
+				if (abs(moveDirx) < 0.02)
+					moveDirx=0;
+				moveDiry -= sdy;
+				if (abs(moveDiry) < 0.02)
+					moveDiry=0;
+				+/
+
 				if (abs(moveDirx) < 0.02 && abs(moveDiry) < 0.02)
 					moveDirx = moveDiry = 0;
 			}
-			
+		
 			if ( tKPrimary.keyTrigger || tKSpecial.keyPress) {
-				g_snds[ Sound.shoot ].play;
+				//g_snds[ Sound.shoot ].play;
+				g_lazerShots[ uniform(0, $) ].play;
+				
 				double aimDirx, aimDiry;
 				xyaim( aimDirx, aimDiry, 1, faceAngle );
 				unitList.append( new Lazer( player, weaponBoosts > 0, xpos + sprite.width / 2 - 2, ypos + sprite.height / 2 - 2,
@@ -268,8 +293,8 @@ public:
 							break;
 							case PieceType.shieldBoost:
 								shield.amount += 30;
-								if ( m_shield.amount > 200 )
-									m_shield.amount = 200;
+								//if ( m_shield.amount > 200 )
+								//	m_shield.amount = 200;
 								clearPiece;
 								break;
 							case PieceType.weaponBoostThree:
@@ -282,6 +307,9 @@ public:
 								break;
 							case PieceType.larverBomb:
 								unitList.append(new LarverBombBlow(player, x, y));
+								clearPiece;
+								break;
+							case PieceType.lazerBeam:
 								clearPiece;
 								break;
 						} // switch

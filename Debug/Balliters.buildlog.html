@@ -1,0 +1,57 @@
+<html><head><META HTTP-EQUIV="Content-Type" content="text/html">
+</head><body><pre>
+<table width=100% bgcolor=#CFCFE5><tr><td>
+	<font face=arial size=+3>Build Log</font>
+</table>
+<table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Building Debug\Balliters.exe
+</font></table>
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Command Line
+</font></table>
+set PATH=c:\jpro\dmd2\windows\bin;C:\Program Files\Microsoft SDKs\Windows\v7.0A\\bin;%PATH%
+
+echo base.d &gt;Debug\Balliters.build.rsp
+echo board.d &gt;&gt;Debug\Balliters.build.rsp
+echo display.d &gt;&gt;Debug\Balliters.build.rsp
+echo fps.d &gt;&gt;Debug\Balliters.build.rsp
+echo game.d &gt;&gt;Debug\Balliters.build.rsp
+echo gameover.d &gt;&gt;Debug\Balliters.build.rsp
+echo main.d &gt;&gt;Debug\Balliters.build.rsp
+echo menu.d &gt;&gt;Debug\Balliters.build.rsp
+echo piece.d &gt;&gt;Debug\Balliters.build.rsp
+echo pointer.d &gt;&gt;Debug\Balliters.build.rsp
+echo popup.d &gt;&gt;Debug\Balliters.build.rsp
+echo setup.d &gt;&gt;Debug\Balliters.build.rsp
+echo shield.d &gt;&gt;Debug\Balliters.build.rsp
+echo tkey.d &gt;&gt;Debug\Balliters.build.rsp
+echo larverbombblow.d &gt;&gt;Debug\Balliters.build.rsp
+echo lazer.d &gt;&gt;Debug\Balliters.build.rsp
+echo lazerbeam.d &gt;&gt;Debug\Balliters.build.rsp
+echo mine.d &gt;&gt;Debug\Balliters.build.rsp
+echo ship.d &gt;&gt;Debug\Balliters.build.rsp
+echo unit.d &gt;&gt;Debug\Balliters.build.rsp
+echo unitlist.d &gt;&gt;Debug\Balliters.build.rsp
+echo weakbrickblow.d &gt;&gt;Debug\Balliters.build.rsp
+
+dmd -g -debug -X -Xf&quot;Debug\Balliters.json&quot; -deps=&quot;Debug\Balliters.dep&quot; -of&quot;Debug\Balliters.exe_cv&quot; -map &quot;Debug\Balliters.map&quot; -L/NOMAP @Debug\Balliters.build.rsp
+if errorlevel 1 goto reportError
+if not exist &quot;Debug\Balliters.exe_cv&quot; (echo &quot;Debug\Balliters.exe_cv&quot; not created! &amp;&amp; goto reportError)
+echo Converting debug information...
+&quot;C:\Program Files\VisualD\cv2pdb\cv2pdb.exe&quot; -D2 &quot;Debug\Balliters.exe_cv&quot; &quot;Debug\Balliters.exe&quot;
+if errorlevel 1 goto reportError
+if not exist &quot;Debug\Balliters.exe&quot; (echo &quot;Debug\Balliters.exe&quot; not created! &amp;&amp; goto reportError)
+
+goto noError
+
+:reportError
+echo Building Debug\Balliters.exe failed!
+
+:noError
+<table width=100% bgcolor=#EFEFE5><tr><td><font face=arial size=+1>
+Output
+</font></table>
+1) Shooting weakbricks [#] 2) New controls [## ] 3) Result screen [# ] 4) Start menu [ ] 5) Save game results [ ] 7) Draw in better order [ ] 8) clean up code [. ] 9) Draw stuff [ ] 10) Control problem 11) Ships getting stuck on each other [ ]
+Thu Dec 29, 2011 - putting in restart
+Converting debug information...
+</body></html>

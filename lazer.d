@@ -11,7 +11,6 @@ private:
 	bool m_weaponBoost;
 	int m_wallTime;
 public:
-
 	this( int player0, bool weaponBoost0, double x, double y, double dirx0, double diry0 ) {
 		player = player0;
 		m_weaponBoost = weaponBoost0;

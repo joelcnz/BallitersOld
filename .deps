@@ -1,0 +1,135 @@
+base base.d 634594721325280000 std.math,std.random,jeca.all,jext.all,
+allegro5.error C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/error.d 634592365712360000 
+std.internal.processinit C:/jpro/dmd2/windows/bin/../../src/phobos/std/internal/processinit.d 634594627299120000 
+std.algorithm C:/jpro/dmd2/windows/bin/../../src/phobos/std/algorithm.d 634594627142010000 std.c.string,std.array,std.ascii,std.container,std.conv,std.exception,std.functional,std.math,std.metastrings,std.range,std.string,std.traits,std.typecons,std.typetuple,std.uni,
+core.sync.mutex C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/sync/mutex.di 634550216520000000 core.sync.exception,core.sys.windows.windows,
+core.stdc.math C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/math.di 634550216520000000 core.stdc.config,
+std.random C:/jpro/dmd2/windows/bin/../../src/phobos/std/random.d 634594627204670000 std.algorithm,std.c.time,std.conv,std.exception,std.math,std.numeric,std.range,std.traits,core.thread,core.time,
+core.exception C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/exception.di 634550216500000000 core.stdc.stdio,
+jeca.misc C:/jpro/dmd2/windows/bin/../../windows/import/jeca/misc.d 634592809551900000 std.stdio,std.string,std.conv,std.math,std.c.string,
+std.windows.syserror C:/jpro/dmd2/windows/bin/../../src/phobos/std/windows/syserror.d 634594627315100000 std.windows.charset,std.c.windows.windows,
+allegro5.bitmap C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/bitmap.d 634592365712240000 allegro5.color,allegro5.internal.da5,allegro5.color_ret,
+ship ship.d 634595307283370000 std.stdio,std.string,std.random,std.math,std.conv,std.range,std.datetime,jeca.all,jext.all,base,unit,unitlist,lazer,mine,tkey,board,shield,larverbombblow,
+jext.letter C:/jpro/dmd2/windows/bin/../../windows/import/jext/letter.d 634584060797740000 std.stdio,std.string,jeca.all,jext.all,
+core.stdc.stdint C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/stdint.di 634550216520000000 core.stdc.stddef,core.stdc.signal,core.stdc.wchar_,
+std.traits C:/jpro/dmd2/windows/bin/../../src/phobos/std/traits.d 634594627129050000 std.typetuple,std.typecons,core.vararg,
+jext.base C:/jpro/dmd2/windows/bin/../../windows/import/jext/base.d 634557426861850000 std.stdio,std.string,std.conv,std.file,std.ascii,jeca.all,
+piece piece.d 634563160317480000 std.stdio,jeca.all,base,
+allegro5.color_ret C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/color_ret.d 634592365712300000 allegro5.color,allegro5.bitmap,
+jeca.all C:/jpro/dmd2/windows/bin/../../windows/import/jeca/all.d 634512483333080000 allegro5.allegro,allegro5.allegro_color,allegro5.allegro_primitives,allegro5.allegro_image,allegro5.allegro_font,allegro5.allegro_ttf,allegro5.allegro_audio,allegro5.allegro_acodec,jeca.base,jeca.bmp,jeca.snd,jeca.misc,
+std.system C:/jpro/dmd2/windows/bin/../../src/phobos/std/system.d 634594627199920000 
+std.c.stddef C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/stddef.d 634594627279730000 core.stdc.stddef,
+core.thread C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/thread.di 634550216500000000 core.time,core.sync.mutex,core.stdc.stdint,core.stdc.stdlib,core.sys.windows.windows,core.sys.windows.threadaux,
+std.c.stdio C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/stdio.d 634594627277540000 core.stdc.stdio,
+std.container C:/jpro/dmd2/windows/bin/../../src/phobos/std/container.d 634594627118920000 core.memory,core.stdc.stdlib,core.stdc.string,std.algorithm,std.conv,std.exception,std.functional,std.range,std.traits,std.typecons,std.typetuple,
+core.stdc.errno C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/errno.di 634550216500000000 
+fps fps.d 634595142088220000 std.string,jeca.all,jext.all,base,
+allegro5.allegro_acodec C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_acodec.d 634592365711120000 
+allegro5.al_debug C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/al_debug.d 634592365710770000 
+std.windows.charset C:/jpro/dmd2/windows/bin/../../src/phobos/std/windows/charset.d 634594627314210000 std.conv,std.c.windows.windows,std.windows.syserror,std.utf,std.string,
+std.windows.registry C:/jpro/dmd2/windows/bin/../../src/phobos/std/windows/registry.d 634594627318270000 std.array,std.system,std.exception,std.c.windows.windows,std.windows.syserror,std.windows.charset,std.conv,std.utf,std.__fileinit,std.internal.windows.advapi32,
+allegro5.allegro C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro.d 634592365711090000 allegro5.internal.da5,allegro5.al_time,allegro5.base,allegro5.system,allegro5.config,allegro5.path,allegro5.al_debug,allegro5.display,allegro5.transformations,allegro5.color,allegro5.bitmap,allegro5.bitmap_io,allegro5.events,allegro5.timer,allegro5.keyboard,allegro5.keycodes,allegro5.mouse,allegro5.joystick,allegro5.memory,allegro5.error,allegro5.file,allegro5.utf8,allegro5.fixed,allegro5.fshook,allegro5.threads,allegro5.tls,
+core.sys.windows.threadaux C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/sys/windows/threadaux.di 634550216540000000 core.sys.windows.windows,core.stdc.stdlib,core.thread,
+core.stdc.stddef C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/stddef.di 634550216520000000 
+allegro5.allegro_font C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_font.d 634592365711550000 allegro5.allegro,
+jext.lettermanager C:/jpro/dmd2/windows/bin/../../windows/import/jext/lettermanager.d 634590879187080000 std.stdio,std.range,jeca.all,jext.all,
+core.stdc.time C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/time.di 634550216520000000 core.stdc.config,core.stdc.stddef,
+std.c.windows.winsock C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/windows/winsock.d 634594627290740000 std.stdint,std.c.windows.windows,core.bitop,
+allegro5.path C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/path.d 634592365713610000 
+std.range C:/jpro/dmd2/windows/bin/../../src/phobos/std/range.d 634594627120370000 std.array,core.bitop,std.algorithm,std.conv,std.exception,std.functional,std.traits,std.typecons,std.typetuple,
+std.c.process C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/process.d 634594627284050000 std.c.stddef,
+allegro5.bitmap_io C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/bitmap_io.d 634592365712270000 allegro5.allegro,
+allegro5.file C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/file.d 634592365712400000 allegro5.path,allegro5.utf8,
+std.c.time C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/time.d 634594627275970000 core.stdc.time,
+allegro5.internal.da5 C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/internal/da5.d 634592365713440000 
+allegro5.system C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/system.d 634592365713630000 allegro5.allegro,std.c.stdlib,
+gameover gameover.d 634594750452150000 std.conv,jeca.all,jext.all,base,ship,
+tkey tkey.d 634576875038520000 jeca.all,
+allegro5.base C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/base.d 634592365712210000 std.math,
+std.string C:/jpro/dmd2/windows/bin/../../src/phobos/std/string.d 634594627260870000 core.exception,core.vararg,core.stdc.stdlib,core.stdc.string,std.algorithm,std.ascii,std.conv,std.exception,std.format,std.functional,std.metastrings,std.range,std.regex,std.traits,std.typetuple,std.uni,std.utf,std.array,
+std.metastrings C:/jpro/dmd2/windows/bin/../../src/phobos/std/metastrings.d 634594627259910000 
+main main.d 634595312289000000 std.stdio,std.string,std.ascii,jeca.all,jext.all,game,
+std.outbuffer C:/jpro/dmd2/windows/bin/../../src/phobos/std/outbuffer.d 634594627241080000 core.memory,std.string,std.c.stdio,std.c.stdlib,std.c.stdarg,
+std.stdiobase C:/jpro/dmd2/windows/bin/../../src/phobos/std/stdiobase.d 634594627104750000 
+allegro5.allegro_color C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_color.d 634592365711500000 allegro5.allegro,allegro5.internal.da5,allegro5.allegro_color_ret,
+core.sys.windows.windows C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/sys/windows/windows.di 634550216540000000 
+allegro5.fixed C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/fixed.d 634594631950130000 allegro5.error,core.stdc.errno,
+allegro5.config C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/config.d 634592365712320000 allegro5.allegro,
+core.sync.exception C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/sync/exception.di 634550216520000000 
+allegro5.threads C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/threads.d 634592365713650000 allegro5.allegro,
+allegro5.fshook C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/fshook.d 634592365712950000 allegro5.allegro,std.c.time,
+core.stdc.stdio C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/stdio.di 634550216520000000 core.stdc.config,core.stdc.stddef,core.stdc.stdarg,
+std.bitmanip C:/jpro/dmd2/windows/bin/../../src/phobos/std/bitmanip.d 634594627133640000 core.bitop,std.traits,
+std.stdint C:/jpro/dmd2/windows/bin/../../src/phobos/std/stdint.d 634594627219070000 core.stdc.stdint,
+jeca.bmp C:/jpro/dmd2/windows/bin/../../windows/import/jeca/bmp.d 634547721443160000 std.stdio,std.string,std.file,jeca.all,
+allegro5.joystick C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/joystick.d 634592365713490000 allegro5.events,
+core.stdc.signal C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/signal.di 634550216520000000 
+std.c.windows.windows C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/windows/windows.d 634594627290120000 core.sys.windows.windows,
+jext.all C:/jpro/dmd2/windows/bin/../../windows/import/jext/all.d 634504429630760000 jext.base,jext.lettermanager,jext.letter,
+std.math C:/jpro/dmd2/windows/bin/../../src/phobos/std/math.d 634594627273660000 core.stdc.math,std.range,std.traits,
+std.conv C:/jpro/dmd2/windows/bin/../../src/phobos/std/conv.d 634594627186960000 core.stdc.math,core.stdc.string,std.algorithm,std.array,std.ascii,std.exception,std.math,std.range,std.string,std.traits,std.typecons,std.typetuple,std.uni,std.utf,std.format,std.metastrings,
+std.exception C:/jpro/dmd2/windows/bin/../../src/phobos/std/exception.d 634594627262640000 std.array,std.c.string,std.conv,std.range,std.string,std.traits,core.exception,core.stdc.errno,
+unitlist unitlist.d 634583287997290000 std.stdio,jeca.misc,unit,
+core.stdc.wchar_ C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/wchar_.di 634550216520000000 core.stdc.config,core.stdc.stdarg,core.stdc.stdio,core.stdc.stddef,core.stdc.time,core.stdc.stdint,
+std.typetuple C:/jpro/dmd2/windows/bin/../../src/phobos/std/typetuple.d 634594627156440000 std.traits,
+setup setup.d 634595306818070000 std.stdio,std.string,std.random,jeca.all,jext.all,base,ship,fps,display,unitlist,board,popup,gameover,larverbombblow,pointer,
+std.c.stdarg C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/stdarg.d 634594627278680000 core.stdc.stdarg,
+allegro5.color C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/color.d 634592365712290000 
+std.internal.windows.advapi32 C:/jpro/dmd2/windows/bin/../../src/phobos/std/internal/windows/advapi32.d 634594627313360000 core.sys.windows.windows,
+allegro5.keyboard C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/keyboard.d 634592365713520000 allegro5.keycodes,allegro5.display,allegro5.events,
+popup popup.d 634583213109300000 std.stdio,std.random,std.datetime,jeca.all,base,board,piece,unitlist,
+std.__fileinit C:/jpro/dmd2/windows/bin/../../src/phobos/std/__fileinit.d 634594627209300000 std.c.windows.windows,
+allegro5.allegro_ttf C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_ttf.d 634592365712190000 allegro5.allegro,allegro5.allegro_font,
+std.uni C:/jpro/dmd2/windows/bin/../../src/phobos/std/uni.d 634594627095180000 std.ascii,
+display display.d 634563307352230000 jeca.all,jext.all,base,board,unitlist,fps,gameover,
+core.stdc.stdarg C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/stdarg.di 634550216520000000 
+allegro5.allegro_image C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_image.d 634592365711570000 allegro5.allegro,
+std.functional C:/jpro/dmd2/windows/bin/../../src/phobos/std/functional.d 634594627109900000 std.metastrings,std.traits,std.typecons,std.typetuple,std.algorithm,std.conv,std.exception,std.math,std.range,std.string,
+core.memory C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/memory.di 634550216500000000 
+std.ascii C:/jpro/dmd2/windows/bin/../../src/phobos/std/ascii.d 634594627103470000 
+allegro5.transformations C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/transformations.d 634592365713710000 
+larverbombblow larverbombblow.d 634583213106900000 std.stdio,std.datetime,std.range,jeca.all,base,unitlist,board,unit,ship,weakbrickblow,
+allegro5.al_time C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/al_time.d 634592365711060000 
+std.c.stdlib C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/stdlib.d 634594627275200000 core.stdc.stdlib,
+weakbrickblow weakbrickblow.d 634583257337390000 std.random,std.datetime,jeca.all,base,unitlist,unit,board,ship,
+allegro5.tls C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/tls.d 634592365713680000 
+allegro5.allegro_primitives C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_primitives.d 634592365712000000 std.stdint,allegro5.allegro,
+std.process C:/jpro/dmd2/windows/bin/../../src/phobos/std/process.d 634594627121780000 core.stdc.stdlib,std.c.stdlib,core.stdc.errno,core.thread,std.c.process,std.c.string,std.conv,std.exception,std.internal.processinit,std.stdio,std.string,std.typecons,std.array,std.format,std.random,std.file,core.sys.windows.windows,std.utf,std.windows.syserror,
+std.array C:/jpro/dmd2/windows/bin/../../src/phobos/std/array.d 634594627124840000 core.memory,core.bitop,std.algorithm,std.ascii,std.conv,std.exception,std.range,std.string,std.traits,std.typecons,std.typetuple,std.uni,std.utf,std.c.string,
+shield shield.d 634571158879700000 jeca.all,
+jeca.snd C:/jpro/dmd2/windows/bin/../../windows/import/jeca/snd.d 634553850522360000 std.stdio,std.string,std.file,std.conv,jeca.all,
+std.internal.uni_tab C:/jpro/dmd2/windows/bin/../../src/phobos/std/internal/uni_tab.d 634594627297440000 std.internal.uni,
+allegro5.utf8 C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/utf8.d 634592365713730000 std.c.stdarg,
+std.path C:/jpro/dmd2/windows/bin/../../src/phobos/std/path.d 634594627101050000 std.algorithm,std.array,std.conv,std.file,std.string,std.traits,std.process,core.stdc.errno,core.stdc.stdlib,std.uni,
+core.time C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/time.di 634550216500000000 core.exception,core.stdc.time,core.stdc.stdio,core.sys.windows.windows,
+unit unit.d 634559807521780000 jeca.all,board,unitlist,
+pointer pointer.d 634555700313200000 jeca.all,base,board,
+core.stdc.config C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/config.di 634550216500000000 
+std.numeric C:/jpro/dmd2/windows/bin/../../src/phobos/std/numeric.d 634594627158180000 std.algorithm,std.array,std.bitmanip,std.conv,std.typecons,std.math,std.traits,std.exception,std.random,std.string,std.range,std.c.stdlib,std.functional,std.typetuple,std.complex,core.bitop,core.exception,
+allegro5.display C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/display.d 634592365712340000 allegro5.bitmap,allegro5.color,allegro5.events,
+std.regex C:/jpro/dmd2/windows/bin/../../src/phobos/std/regex.d 634594627231360000 std.internal.uni,std.internal.uni_tab,std.array,std.algorithm,std.range,std.conv,std.exception,std.traits,std.typetuple,std.uni,std.utf,std.format,std.typecons,std.bitmanip,std.functional,core.bitop,core.stdc.string,core.stdc.stdlib,std.ascii,std.string,
+std.utf C:/jpro/dmd2/windows/bin/../../src/phobos/std/utf.d 634594627183210000 std.conv,std.exception,std.range,std.traits,std.typetuple,std.algorithm,std.string,
+allegro5.memory C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/memory.d 634592365713560000 
+core.stdc.stdlib C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/stdlib.di 634550216520000000 core.stdc.config,core.stdc.stddef,
+lazer lazer.d 634592106451950000 std.stdio,std.random,jeca.all,base,unit,unitlist,ship,board,weakbrickblow,larverbombblow,
+std.file C:/jpro/dmd2/windows/bin/../../src/phobos/std/file.d 634594627196770000 core.memory,core.stdc.stdio,core.stdc.stdlib,core.stdc.string,core.stdc.errno,std.algorithm,std.array,std.conv,std.datetime,std.exception,std.format,std.path,std.process,std.range,std.stdio,std.string,std.traits,std.typecons,std.typetuple,std.utf,std.metastrings,core.sys.windows.windows,std.windows.charset,std.windows.syserror,std.__fileinit,
+allegro5.mouse C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/mouse.d 634592365713590000 allegro5.display,allegro5.events,allegro5.bitmap,
+allegro5.keycodes C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/keycodes.d 634592365713540000 
+std.c.string C:/jpro/dmd2/windows/bin/../../src/phobos/std/c/string.d 634594627274670000 core.stdc.string,
+std.typecons C:/jpro/dmd2/windows/bin/../../src/phobos/std/typecons.d 634594627155090000 core.memory,core.stdc.stdlib,std.algorithm,std.array,std.conv,std.exception,std.format,std.metastrings,std.traits,std.typetuple,std.range,
+std.complex C:/jpro/dmd2/windows/bin/../../src/phobos/std/complex.d 634594627117110000 std.format,std.math,std.numeric,std.traits,
+std.datetime C:/jpro/dmd2/windows/bin/../../src/phobos/std/datetime.d 634594627269890000 core.time,core.exception,core.stdc.time,std.array,std.algorithm,std.ascii,std.conv,std.exception,std.file,std.functional,std.math,std.metastrings,std.path,std.range,std.stdio,std.string,std.system,std.traits,std.typecons,core.sys.windows.windows,std.c.windows.winsock,std.windows.registry,std.bitmanip,
+std.format C:/jpro/dmd2/windows/bin/../../src/phobos/std/format.d 634594627114630000 core.stdc.stdio,core.stdc.stdlib,core.stdc.string,core.vararg,std.algorithm,std.array,std.ascii,std.bitmanip,std.conv,std.exception,std.functional,std.math,std.range,std.string,std.system,std.traits,std.typecons,std.typetuple,std.utf,
+allegro5.events C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/events.d 634592365712380000 allegro5.allegro,std.stdint,
+board board.d 634595307156760000 std.stdio,std.string,jeca.all,base,piece,
+jeca.base C:/jpro/dmd2/windows/bin/../../windows/import/jeca/base.d 634529778094000000 std.stdio,std.string,std.file,std.conv,std.array,std.c.string,jeca.all,
+allegro5.timer C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/timer.d 634592365713670000 allegro5.events,allegro5.internal.da5,
+std.stdio C:/jpro/dmd2/windows/bin/../../src/phobos/std/stdio.d 634594627116330000 core.stdc.stdio,std.c.stdio,std.stdiobase,core.stdc.errno,core.stdc.stddef,core.stdc.stdlib,core.memory,core.stdc.string,core.stdc.wchar_,std.algorithm,std.array,std.conv,std.exception,std.format,std.file,std.range,std.string,std.traits,std.typecons,std.typetuple,std.utf,
+game game.d 634594722185380000 std.stdio,std.string,std.conv,std.random,std.datetime,jeca.all,jext.all,base,unit,ship,unitlist,board,display,fps,setup,popup,gameover,larverbombblow,pointer,tkey,
+core.stdc.string C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/stdc/string.di 634550216520000000 core.stdc.stddef,
+std.internal.uni C:/jpro/dmd2/windows/bin/../../src/phobos/std/internal/uni.d 634594627301130000 std.algorithm,std.range,std.uni,std.format,std.internal.uni_tab,core.bitop,
+core.vararg C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/vararg.di 634550216500000000 
+allegro5.allegro_audio C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_audio.d 634592365711480000 allegro5.allegro,allegro5.internal.da5,
+allegro5.allegro_color_ret C:/jpro/dmd2/windows/bin/../../windows/import/allegro5/allegro_color_ret.d 634592365711530000 allegro5.allegro,
+core.bitop C:/jpro/dmd2/windows/bin/../../src/druntime/import/core/bitop.di 634550216500000000 
+mine mine.d 634586812352260000 std.stdio,std.random,jeca.all,base,unit,unitlist,ship,board,

@@ -8,7 +8,7 @@ pragma( lib, "liballegro5" );
 pragma( lib, "libdallegro5" );
 +/
 
-//pragma(lib, "allegrobig5");
+//pragma(lib, "allegrobig5"); // works in Geany
 pragma(lib, "allegro");
 pragma(lib, "allegro_acodec");
 pragma(lib, "allegro_audio");
@@ -36,7 +36,8 @@ const NEED_WORK = "1) Shooting weakbricks [#] 2) New controls [## ] 3) Result sc
 	" 8) clean up code [. ] 9) Draw stuff [ ] 10) Control problem"
 	" 11) Ships getting stuck on each other [ ]";
 
-const VERSION = "Thu Dec 15, 2011 - Working on being able to have more than 2 players.";
+const VERSION = "Thu Dec 29, 2011 - putting in restart";
+//const VERSION = "Thu Dec 15, 2011 - Working on being able to have more than 2 players.";
 //const VERSION = "Mon Dec 12, 2011 - Updating Dallegro5";
 //const VERSION = "Sat Dec 10, 2011 - Renamed PlayGround to Game";
 //const VERSION = "Mon Dec 5, 2011 - fine tuning, a control fix, bit less speed intensive, fix mine damage being same as bolt and increased boost damage, added control problem to my simple road map.";
@@ -73,7 +74,7 @@ pragma(msg, VERSION);
 void main(string[] args) {
 	writeln(NEED_WORK);
 	writeln(VERSION);
-	Init( "-m full -wxh 1024 768".split ~ args );
+	Init( "-wxh 1024 768".split ~ args );
 	scope( exit )
 		Deinit;
 
@@ -123,5 +124,6 @@ void main(string[] args) {
 		//	g_bmpLetters = getLetters( lettersSource, null, g_width + 1);
 	} // reference only
 
-	(new Game(args)).run;
+	while( (new Game(args)).run )
+	{}
 }

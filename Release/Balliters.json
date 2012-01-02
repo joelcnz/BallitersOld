@@ -1,0 +1,2065 @@
+[
+{
+"name" : "base",
+"kind" : "module",
+"file" : "base.d",
+"members" : [
+{
+"name" : "dub",
+"kind" : "alias",
+"type" : "double",
+"line" : 10}
+,
+{
+"name" : "UnitType",
+"kind" : "enum",
+"protection" : "public",
+"line" : 12,
+"base" : "int",
+"members" : [
+{
+"name" : "ship",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 12}
+,
+{
+"name" : "lazer",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 12}
+,
+{
+"name" : "mine",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 12}
+]
+}
+,
+{
+"name" : "PieceType",
+"kind" : "enum",
+"protection" : "public",
+"line" : 13,
+"base" : "int",
+"members" : [
+{
+"name" : "blank",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "weakBrick",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "brick",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "darkBrick",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "shieldBoost",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "weaponBoostThree",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "weaponBoostTen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 13}
+,
+{
+"name" : "larverBomb",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 14}
+]
+}
+,
+{
+"name" : "DisplayType",
+"kind" : "enum",
+"protection" : "public",
+"line" : 15,
+"base" : "int",
+"members" : [
+{
+"name" : "board",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "units",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "text",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "fpsBar",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "gameOver",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "flip",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+]
+}
+,
+{
+"name" : "Show",
+"kind" : "enum",
+"protection" : "public",
+"line" : 16,
+"base" : "int",
+"members" : [
+{
+"name" : "fpsBar",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 16}
+,
+{
+"name" : "debugInfo",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 16}
+,
+{
+"name" : "players",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 16}
+]
+}
+,
+{
+"name" : "ShipState",
+"kind" : "enum",
+"protection" : "public",
+"line" : 17,
+"base" : "int",
+"members" : [
+{
+"name" : "good",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 17}
+,
+{
+"name" : "blowingUp",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 17}
+,
+{
+"name" : "destroyed",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 17}
+]
+}
+,
+{
+"name" : "GameType",
+"kind" : "enum",
+"protection" : "public",
+"line" : 19,
+"base" : "int",
+"members" : [
+{
+"name" : "normal",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 19}
+,
+{
+"name" : "suddenDeath",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 19}
+]
+}
+,
+{
+"name" : "g_gameType",
+"kind" : "variable",
+"protection" : "public",
+"type" : "GameType",
+"line" : 20}
+,
+{
+"name" : "g_toDisplay",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 22}
+,
+{
+"name" : "g_shipTimer",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 23}
+,
+{
+"name" : "g_letterBase",
+"kind" : "variable",
+"protection" : "public",
+"type" : "jext.lettermanager.LetterManager",
+"line" : 25}
+,
+{
+"name" : "DebugInfo",
+"kind" : "class",
+"protection" : "public",
+"line" : 27,
+"base" : "Object",
+"members" : [
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 28}
+]
+}
+,
+{
+"name" : "g_debugInfo",
+"kind" : "variable",
+"protection" : "public",
+"type" : "base.DebugInfo",
+"line" : 33}
+,
+{
+"name" : "g_ballStartPostions",
+"kind" : "variable",
+"protection" : "public",
+"type" : "double[]",
+"line" : 41}
+,
+{
+"name" : "g_frameGfx",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Bmp[][]",
+"line" : 42}
+,
+{
+"name" : "g_larverBlowFramesGfx",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Bmp[]",
+"line" : 43}
+,
+{
+"name" : "g_flashGfx",
+"kind" : "variable",
+"protection" : "public",
+"type" : "jeca.bmp.Bmp",
+"line" : 44}
+,
+{
+"name" : "Sound",
+"kind" : "enum",
+"protection" : "public",
+"line" : 46,
+"base" : "int",
+"members" : [
+{
+"name" : "shoot",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 46}
+,
+{
+"name" : "blowUp",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 46}
+]
+}
+,
+{
+"name" : "g_snds",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Snd[]",
+"line" : 47}
+,
+{
+"name" : "g_morris",
+"kind" : "variable",
+"protection" : "public",
+"type" : "jeca.snd.Snd",
+"line" : 49}
+,
+{
+"name" : "g_smallBlows",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Snd[]",
+"line" : 51}
+,
+{
+"name" : "g_medBlows",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Snd[]",
+"line" : 52}
+,
+{
+"name" : "g_largeBlows",
+"kind" : "variable",
+"protection" : "public",
+"type" : "Snd[]",
+"line" : 53}
+,
+{
+"name" : "bumpLimit",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(ref int number, int step, int limit)",
+"line" : 57}
+,
+{
+"name" : "pos",
+"kind" : "function",
+"protection" : "public",
+"type" : "uint(double num)",
+"line" : 64}
+,
+{
+"name" : "doesMatch(T1,T2)",
+"kind" : "template",
+"protection" : "public",
+"line" : 68,
+"members" : [
+{
+"name" : "doesMatch",
+"kind" : "function",
+"type" : "bool(T1 value, T2[] possibles)",
+"line" : 68}
+]
+}
+,
+{
+"name" : "getAngle",
+"kind" : "function",
+"protection" : "public",
+"type" : "double(double x, double y, double tx, double ty)",
+"line" : 75}
+,
+{
+"name" : "correct",
+"kind" : "function",
+"protection" : "public",
+"type" : "double(double angle)",
+"line" : 80}
+,
+{
+"name" : "xyaim",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(ref double dx, ref double dy, double stp, double ang)",
+"line" : 89}
+]
+}
+,
+{
+"name" : "board",
+"kind" : "module",
+"file" : "board.d",
+"members" : [
+{
+"name" : "Board",
+"kind" : "class",
+"protection" : "public",
+"line" : 12,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_pieces",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Bmp[]",
+"line" : 14}
+,
+{
+"name" : "m_map",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Piece[][]",
+"line" : 15}
+,
+{
+"name" : "m_levelGfx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jeca.bmp.Bmp",
+"line" : 16}
+,
+{
+"name" : "pieces",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Bmp[]()",
+"line" : 18}
+,
+{
+"name" : "map",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Piece[][]()",
+"line" : 19}
+,
+{
+"name" : "levelGfx",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Bmp()",
+"line" : 20}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Board(Bmp[] gfx)",
+"line" : 22}
+,
+{
+"name" : "hitBrick",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(double x, double y)",
+"line" : 46}
+,
+{
+"name" : "inBounds",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool(double x, double y)",
+"line" : 53}
+,
+{
+"name" : "piece",
+"kind" : "function",
+"protection" : "public",
+"type" : "Piece(double x, double y)",
+"line" : 61}
+,
+{
+"name" : "getPieceType",
+"kind" : "function",
+"protection" : "public",
+"type" : "PieceType(double x, double y)",
+"line" : 69}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 77}
+]
+}
+]
+}
+,
+{
+"name" : "display",
+"kind" : "module",
+"file" : "display.d",
+"members" : [
+{
+"name" : "Display",
+"kind" : "class",
+"protection" : "public",
+"line" : 7,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_board",
+"kind" : "variable",
+"protection" : "private",
+"type" : "board.Board",
+"line" : 9}
+,
+{
+"name" : "m_unitList",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unitlist.UnitList",
+"line" : 10}
+,
+{
+"name" : "m_fps",
+"kind" : "variable",
+"protection" : "private",
+"type" : "fps.Fps",
+"line" : 11}
+,
+{
+"name" : "m_gameOver",
+"kind" : "variable",
+"protection" : "private",
+"type" : "gameover.GameOver",
+"line" : 12}
+,
+{
+"name" : "m_debugInfo",
+"kind" : "variable",
+"protection" : "private",
+"type" : "base.DebugInfo",
+"line" : 13}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Display(Board board0, UnitList unitList0, Fps fps0, GameOver gameOver0, DebugInfo debugInfo0)",
+"line" : 15}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(DisplayType displayType)",
+"line" : 23}
+]
+}
+]
+}
+,
+{
+"name" : "fps",
+"kind" : "module",
+"file" : "fps.d",
+"members" : [
+{
+"name" : "Fps",
+"kind" : "class",
+"protection" : "public",
+"line" : 8,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_currentFps",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 10}
+,
+{
+"name" : "m_jext",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jext.lettermanager.LetterManager",
+"line" : 11}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Fps()",
+"line" : 13}
+,
+{
+"name" : "update",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int fps)",
+"line" : 21}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 25}
+]
+}
+]
+}
+,
+{
+"name" : "game",
+"kind" : "module",
+"file" : "game.d",
+"members" : [
+{
+"name" : "Game",
+"kind" : "class",
+"protection" : "public",
+"line" : 22,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_spriteSet",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jeca.bmp.Bmp",
+"line" : 24}
+,
+{
+"name" : "m_board",
+"kind" : "variable",
+"protection" : "private",
+"type" : "board.Board",
+"line" : 25}
+,
+{
+"name" : "m_unitList",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unitlist.UnitList",
+"line" : 26}
+,
+{
+"name" : "m_display",
+"kind" : "variable",
+"protection" : "private",
+"type" : "display.Display",
+"line" : 27}
+,
+{
+"name" : "m_fps",
+"kind" : "variable",
+"protection" : "private",
+"type" : "fps.Fps",
+"line" : 28}
+,
+{
+"name" : "m_setUp",
+"kind" : "variable",
+"protection" : "private",
+"type" : "setup.SetUp",
+"line" : 29}
+,
+{
+"name" : "m_popUp",
+"kind" : "variable",
+"protection" : "private",
+"type" : "popup.PopUp",
+"line" : 30}
+,
+{
+"name" : "m_gameOver",
+"kind" : "variable",
+"protection" : "private",
+"type" : "gameover.GameOver",
+"line" : 31}
+,
+{
+"name" : "m_larverBombBlow",
+"kind" : "variable",
+"protection" : "private",
+"type" : "larverbombblow.LarverBombBlow",
+"line" : 32}
+,
+{
+"name" : "m_pointer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "pointer.Pointer",
+"line" : 33}
+,
+{
+"name" : "spriteSet",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Bmp()",
+"line" : 35}
+,
+{
+"name" : "unitList",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref UnitList()",
+"line" : 36}
+,
+{
+"name" : "board",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Board()",
+"line" : 37}
+,
+{
+"name" : "popUp",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref PopUp()",
+"line" : 38}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Game(string[] args)",
+"line" : 43}
+,
+{
+"name" : "run",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 51}
+]
+}
+]
+}
+,
+{
+"name" : "gameover",
+"kind" : "module",
+"file" : "gameover.d",
+"members" : [
+{
+"name" : "GameOver",
+"kind" : "class",
+"protection" : "public",
+"line" : 8,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_text",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jext.lettermanager.LetterManager",
+"line" : 10}
+,
+{
+"name" : "m_ships",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Ship[]",
+"line" : 11}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "GameOver(Ship[] ships0)",
+"line" : 13}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 19}
+]
+}
+]
+}
+,
+{
+"name" : "main",
+"kind" : "module",
+"file" : "main.d",
+"members" : [
+{
+"name" : "NEED_WORK",
+"kind" : "variable",
+"protection" : "public",
+"type" : "const(immutable(char)[])",
+"line" : 21}
+,
+{
+"name" : "VERSION",
+"kind" : "variable",
+"protection" : "public",
+"type" : "const(immutable(char)[])",
+"line" : 23}
+,
+{
+"name" : "main",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(string[] args)",
+"line" : 56}
+]
+}
+,
+{
+"name" : "menu",
+"kind" : "module",
+"file" : "menu.d",
+"members" : [
+{
+"name" : "Menu",
+"kind" : "class",
+"protection" : "public",
+"line" : 6,
+"base" : "Object",
+"members" : [
+]
+}
+]
+}
+,
+{
+"name" : "piece",
+"kind" : "module",
+"file" : "piece.d",
+"members" : [
+{
+"name" : "Piece",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_xpos",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 11}
+,
+{
+"name" : "m_ypos",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 11}
+,
+{
+"name" : "m_piecesGfx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Bmp[]",
+"line" : 12}
+,
+{
+"name" : "m_boardGfx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jeca.bmp.Bmp",
+"line" : 13}
+,
+{
+"name" : "m_type",
+"kind" : "variable",
+"protection" : "private",
+"type" : "PieceType",
+"line" : 14}
+,
+{
+"name" : "type",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref PieceType()",
+"line" : 16}
+,
+{
+"name" : "xpos",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 17}
+,
+{
+"name" : "ypos",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 18}
+,
+{
+"name" : "boardGfx",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Bmp()",
+"line" : 19}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Piece(PieceType pieceType, int x, int y, Bmp[] piecesGfx0, Bmp boardGfx0)",
+"line" : 21}
+,
+{
+"name" : "bitmap",
+"kind" : "function",
+"protection" : "public",
+"type" : "ALLEGRO_BITMAP*(PieceType pieceType)",
+"line" : 29}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 36}
+]
+}
+]
+}
+,
+{
+"name" : "pointer",
+"kind" : "module",
+"file" : "pointer.d",
+"members" : [
+{
+"name" : "Pointer",
+"kind" : "class",
+"protection" : "public",
+"line" : 6,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_board",
+"kind" : "variable",
+"protection" : "private",
+"type" : "board.Board",
+"line" : 8}
+,
+{
+"name" : "board",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Board()",
+"line" : 10}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Pointer(Board board0)",
+"line" : 12}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 16}
+]
+}
+]
+}
+,
+{
+"name" : "popup",
+"kind" : "module",
+"file" : "popup.d",
+"members" : [
+{
+"name" : "PopUp",
+"kind" : "class",
+"protection" : "public",
+"line" : 11,
+"base" : "Object",
+"members" : [
+{
+"name" : "TimeOut",
+"kind" : "enum",
+"protection" : "public",
+"line" : 13,
+"base" : "int",
+"members" : [
+{
+"name" : "weakBrick",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 14}
+,
+{
+"name" : "shieldBoost",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 15}
+,
+{
+"name" : "weaponBoostThree",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 16}
+,
+{
+"name" : "weaponBoostTen",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 17}
+,
+{
+"name" : "larverBomb",
+"kind" : "enum member",
+"protection" : "public",
+"line" : 18}
+]
+}
+,
+{
+"name" : "m_weakBrickTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 19}
+,
+{
+"name" : "m_shieldBoostTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 20}
+,
+{
+"name" : "m_weaponBoostThreeTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 21}
+,
+{
+"name" : "m_weaponBoostTenTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 22}
+,
+{
+"name" : "m_larverBombTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 23}
+,
+{
+"name" : "m_second",
+"kind" : "variable",
+"protection" : "private",
+"type" : "StopWatch",
+"line" : 24}
+,
+{
+"name" : "m_board",
+"kind" : "variable",
+"protection" : "private",
+"type" : "board.Board",
+"line" : 25}
+,
+{
+"name" : "m_unitList",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unitlist.UnitList",
+"line" : 26}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "PopUp(Board board, UnitList unitList0)",
+"line" : 28}
+,
+{
+"name" : "updateTimersEtc",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PieceType forcePopUpId = cast(PieceType)0)",
+"line" : 34}
+,
+{
+"name" : "place",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(PieceType pieceType)",
+"line" : 76}
+]
+}
+]
+}
+,
+{
+"name" : "setup",
+"kind" : "module",
+"file" : "setup.d",
+"members" : [
+{
+"name" : "SetUp",
+"kind" : "class",
+"protection" : "public",
+"line" : 14,
+"base" : "Object",
+"members" : [
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "SetUp(string[] args)",
+"line" : 15}
+,
+{
+"name" : "setUp",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(ref Bmp spriteSet, ref UnitList unitList, ref Board board, ref Fps fps, ref PopUp popUp, ref Display display, ref GameOver gameOver, ref LarverBombBlow laverBombBlow, ref Pointer pointer)",
+"line" : 17}
+]
+}
+]
+}
+,
+{
+"name" : "shield",
+"kind" : "module",
+"file" : "shield.d",
+"members" : [
+{
+"name" : "Shield",
+"kind" : "class",
+"protection" : "public",
+"line" : 5,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_boxx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 7}
+,
+{
+"name" : "m_boxy",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 7}
+,
+{
+"name" : "m_amount",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 8}
+,
+{
+"name" : "m_player",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 9}
+,
+{
+"name" : "amount",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 11}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Shield(int player)",
+"line" : 13}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 20}
+]
+}
+]
+}
+,
+{
+"name" : "tkey",
+"kind" : "module",
+"file" : "tkey.d",
+"members" : [
+{
+"name" : "TKey",
+"kind" : "class",
+"protection" : "public",
+"line" : 5,
+"base" : "Object",
+"members" : [
+{
+"name" : "tKey",
+"kind" : "variable",
+"protection" : "public",
+"type" : "int",
+"line" : 6}
+,
+{
+"name" : "keyDown",
+"kind" : "variable",
+"protection" : "public",
+"type" : "bool",
+"line" : 7}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "TKey(int tkey0)",
+"line" : 8}
+,
+{
+"name" : "keyTrigger",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 13}
+,
+{
+"name" : "keyPress",
+"kind" : "function",
+"protection" : "public",
+"type" : "bool()",
+"line" : 26}
+]
+}
+]
+}
+,
+{
+"name" : "larverbombblow",
+"kind" : "module",
+"file" : "larverbombblow.d",
+"members" : [
+{
+"name" : "LarverBombBlow",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Unit",
+"members" : [
+{
+"name" : "m_frame",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 11}
+,
+{
+"name" : "m_frameTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "StopWatch",
+"line" : 12}
+,
+{
+"name" : "frame",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 14}
+,
+{
+"name" : "frameTimer",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref StopWatch()",
+"line" : 15}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "LarverBombBlow(int player0, double x, double y)",
+"line" : 17}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 25}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 59}
+]
+}
+]
+}
+,
+{
+"name" : "lazer",
+"kind" : "module",
+"file" : "lazer.d",
+"members" : [
+{
+"name" : "Lazer",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Unit",
+"members" : [
+{
+"name" : "m_weaponBoost",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 11}
+,
+{
+"name" : "m_wallTime",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 12}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Lazer(int player0, bool weaponBoost0, double x, double y, double dirx0, double diry0)",
+"line" : 15}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 26}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 79}
+]
+}
+]
+}
+,
+{
+"name" : "mine",
+"kind" : "module",
+"file" : "mine.d",
+"members" : [
+{
+"name" : "Mine",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Unit",
+"members" : [
+{
+"name" : "m_lifeTime",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 11}
+,
+{
+"name" : "m_weaponBoost",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 12}
+,
+{
+"name" : "lifeTime",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 14}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Mine(int player0, bool weaponBoost0, double x, double y)",
+"line" : 16}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 25}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 41}
+]
+}
+]
+}
+,
+{
+"name" : "ship",
+"kind" : "module",
+"file" : "ship.d",
+"members" : [
+{
+"name" : "Ship",
+"kind" : "class",
+"protection" : "public",
+"line" : 19,
+"base" : "Unit",
+"members" : [
+{
+"name" : "m_inc",
+"kind" : "variable",
+"protection" : "private",
+"type" : "immutable(double)",
+"line" : 21}
+,
+{
+"name" : "m_timer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 22}
+,
+{
+"name" : "m_faceAngle",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 23}
+,
+{
+"name" : "m_idcurrent",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 24}
+,
+{
+"name" : "m_id",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 25}
+,
+{
+"name" : "kup",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "kright",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "kdown",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "kleft",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "kprimary",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "ksecondary",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "kspecial",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 26}
+,
+{
+"name" : "tKPrimary",
+"kind" : "variable",
+"protection" : "private",
+"type" : "tkey.TKey",
+"line" : 27}
+,
+{
+"name" : "tKSecondary",
+"kind" : "variable",
+"protection" : "private",
+"type" : "tkey.TKey",
+"line" : 27}
+,
+{
+"name" : "tKSpecial",
+"kind" : "variable",
+"protection" : "private",
+"type" : "tkey.TKey",
+"line" : 27}
+,
+{
+"name" : "m_shield",
+"kind" : "variable",
+"protection" : "private",
+"type" : "shield.Shield",
+"line" : 28}
+,
+{
+"name" : "m_weaponBoosts",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 29}
+,
+{
+"name" : "m_flash",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 30}
+,
+{
+"name" : "m_flashTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "StopWatch",
+"line" : 31}
+,
+{
+"name" : "m_blowUpTimer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "StopWatch",
+"line" : 32}
+,
+{
+"name" : "m_weaponBoostsText",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jext.lettermanager.LetterManager",
+"line" : 33}
+,
+{
+"name" : "m_scrap",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 34}
+,
+{
+"name" : "m_blowUpGfx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "Bmp[]",
+"line" : 35}
+,
+{
+"name" : "m_state",
+"kind" : "variable",
+"protection" : "private",
+"type" : "ShipState",
+"line" : 36}
+,
+{
+"name" : "m_blowFrame",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 37}
+,
+{
+"name" : "aimDirx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 38}
+,
+{
+"name" : "aimDiry",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 38}
+,
+{
+"name" : "moveDirx",
+"kind" : "alias",
+"line" : 39}
+,
+{
+"name" : "moveDiry",
+"kind" : "alias",
+"line" : 40}
+,
+{
+"name" : "m_debugFlag",
+"kind" : "variable",
+"protection" : "private",
+"type" : "bool",
+"line" : 41}
+,
+{
+"name" : "faceAngle",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 43}
+,
+{
+"name" : "weaponBoosts",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 44}
+,
+{
+"name" : "shield",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Shield()",
+"line" : 45}
+,
+{
+"name" : "state",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref ShipState()",
+"line" : 46}
+,
+{
+"name" : "timer",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 47}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "Ship(Bmp sprite0, Bmp[] blowUpGfx0, int x, int y, int[] keyCon)",
+"line" : 49}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 88}
+,
+{
+"name" : "doDamage",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(int damage)",
+"line" : 92}
+,
+{
+"name" : "opCmp",
+"kind" : "function",
+"protection" : "public",
+"type" : "int(Object other)",
+"line" : 103}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 107}
+,
+{
+"name" : "reset",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 146}
+,
+{
+"name" : "altControl",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 152}
+]
+}
+]
+}
+,
+{
+"name" : "unit",
+"kind" : "module",
+"file" : "unit.d",
+"members" : [
+{
+"name" : "Unit",
+"kind" : "class",
+"protection" : "public",
+"line" : 6,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_previous",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unit.Unit",
+"line" : 8}
+,
+{
+"name" : "m_next",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unit.Unit",
+"line" : 8}
+,
+{
+"name" : "m_mainType",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 9}
+,
+{
+"name" : "m_player",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 10}
+,
+{
+"name" : "m_sprite",
+"kind" : "variable",
+"protection" : "private",
+"type" : "jeca.bmp.Bmp",
+"line" : 11}
+,
+{
+"name" : "m_xpos",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 12}
+,
+{
+"name" : "m_ypos",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 12}
+,
+{
+"name" : "m_dirx",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 12}
+,
+{
+"name" : "m_diry",
+"kind" : "variable",
+"protection" : "private",
+"type" : "double",
+"line" : 12}
+,
+{
+"name" : "xpos",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 14}
+,
+{
+"name" : "ypos",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 15}
+,
+{
+"name" : "dirx",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 16}
+,
+{
+"name" : "diry",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref double()",
+"line" : 17}
+,
+{
+"name" : "sprite",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Bmp()",
+"line" : 18}
+,
+{
+"name" : "previous",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Unit()",
+"line" : 19}
+,
+{
+"name" : "next",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Unit()",
+"line" : 20}
+,
+{
+"name" : "mainType",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 21}
+,
+{
+"name" : "player",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref int()",
+"line" : 22}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board _param_0, UnitList _param_1)",
+"line" : 24}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 25}
+,
+{
+"name" : "selfDestruct",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(UnitList unitList)",
+"line" : 26}
+]
+}
+]
+}
+,
+{
+"name" : "unitlist",
+"kind" : "module",
+"file" : "unitlist.d",
+"members" : [
+{
+"name" : "UnitList",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Object",
+"members" : [
+{
+"name" : "m_head",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unit.Unit",
+"line" : 11}
+,
+{
+"name" : "m_tail",
+"kind" : "variable",
+"protection" : "private",
+"type" : "unit.Unit",
+"line" : 11}
+,
+{
+"name" : "head",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Unit()",
+"line" : 13}
+,
+{
+"name" : "tail",
+"kind" : "function",
+"protection" : "public",
+"type" : "@property ref Unit()",
+"line" : 14}
+,
+{
+"name" : "append",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Unit newUnit)",
+"line" : 16}
+,
+{
+"name" : "opApply",
+"kind" : "function",
+"protection" : "public",
+"type" : "int(int delegate(ref Unit) dg)",
+"line" : 27}
+,
+{
+"name" : "opApply",
+"kind" : "function",
+"protection" : "public",
+"type" : "int(int delegate(ref int i, ref Unit) dg)",
+"line" : 40}
+,
+{
+"name" : "opSlice",
+"kind" : "function",
+"protection" : "public",
+"type" : "Unit[](int start, int end)",
+"line" : 55}
+,
+{
+"name" : "opDollar",
+"kind" : "function",
+"protection" : "public",
+"type" : "uint()",
+"line" : 75}
+,
+{
+"name" : "opIndex",
+"kind" : "function",
+"protection" : "public",
+"type" : "Unit(uint index)",
+"line" : 79}
+,
+{
+"name" : "remove",
+"kind" : "function",
+"protection" : "public",
+"type" : "Unit(Unit node)",
+"line" : 92}
+,
+{
+"name" : "length",
+"kind" : "function",
+"protection" : "public",
+"type" : "int()",
+"line" : 110}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 120}
+]
+}
+]
+}
+,
+{
+"name" : "weakbrickblow",
+"kind" : "module",
+"file" : "weakbrickblow.d",
+"members" : [
+{
+"name" : "WeakBrickBlow",
+"kind" : "class",
+"protection" : "public",
+"line" : 9,
+"base" : "Unit",
+"members" : [
+{
+"name" : "m_frame",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 11}
+,
+{
+"name" : "m_blowUpFrameSet",
+"kind" : "variable",
+"protection" : "private",
+"type" : "int",
+"line" : 12}
+,
+{
+"name" : "m_timer",
+"kind" : "variable",
+"protection" : "private",
+"type" : "StopWatch",
+"line" : 13}
+,
+{
+"name" : "this",
+"kind" : "constructor",
+"protection" : "public",
+"type" : "WeakBrickBlow(int player0, double x, double y)",
+"line" : 15}
+,
+{
+"name" : "process",
+"kind" : "function",
+"protection" : "public",
+"type" : "void(Board board, UnitList unitList)",
+"line" : 23}
+,
+{
+"name" : "draw",
+"kind" : "function",
+"protection" : "public",
+"type" : "void()",
+"line" : 34}
+]
+}
+]
+}
+]

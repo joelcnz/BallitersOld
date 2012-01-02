@@ -19,7 +19,7 @@ public:
 		m_weaponBoost = weaponBoost0;
 		xpos = x;
 		ypos = y;
-		lifeTime = 700;
+		lifeTime = 1_200;
 	}
 	
 	override void process( Board board, UnitList unitList ) {

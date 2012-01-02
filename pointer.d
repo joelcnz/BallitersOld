@@ -39,5 +39,9 @@ public:
 			setPiece(PieceType.brick);
 		if (key[ALLEGRO_KEY_F7])
 			setPiece(PieceType.darkBrick);
+		if (key[ALLEGRO_KEY_F8])
+			setPiece(PieceType.blank);
+		if (key[ALLEGRO_KEY_F9])
+			setPiece(PieceType.lazerBeam);
 	}
 }

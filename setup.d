@@ -1,3 +1,4 @@
+//#set number of players
 //#morris
 module setup;
 
@@ -16,6 +17,7 @@ class SetUp {
 	
 	void setUp( ref Bmp spriteSet, ref UnitList unitList, ref Board board, ref Fps fps, ref PopUp popUp, ref Display display,
 		        ref GameOver gameOver, ref LarverBombBlow laverBombBlow, ref Pointer pointer) {
+		
 		g_letterBase = new LetterManager(Bmp.loadBitmap( `fonts\`~"lemgreen.bmp"),
 										 Square( 0, 0, DISPLAY_W, DISPLAY_H ), 8, 17 );
 		
@@ -44,9 +46,10 @@ class SetUp {
 		auto lazerBeamGfx =        getSlice(8 + 8 +16, 176);
 		g_flashGfx =               getSlice(0,         168);
 
+		g_larverBlowFramesGfx.length = 0;
 		foreach(x; 0 .. 5) {
-			g_larverBlowFramesGfx~=getSlice(x*8,184);
-			g_larverBlowFramesGfx[$-1].resize(24,24);
+			g_larverBlowFramesGfx~=getSlice(x*8, 184);
+			g_larverBlowFramesGfx[$-1].resize(24, 24);
 		}
 
 		// resize to bigger
@@ -82,23 +85,65 @@ class SetUp {
 		
 		unitList = new UnitList; // a must!
 
-		unitList.append( new Ship( shipGfx1, shipBlowGfx1, -1, -1,
-			[ALLEGRO_KEY_E, ALLEGRO_KEY_F, ALLEGRO_KEY_D, ALLEGRO_KEY_S, ALLEGRO_KEY_Z, ALLEGRO_KEY_X,
-			ALLEGRO_KEY_A ] ) );
+		(new Ship()).idCurrent = 0;
+		void player1() {
+			unitList.append( new Ship( shipGfx1, shipBlowGfx1, -1, -1,
+									  [ALLEGRO_KEY_E, ALLEGRO_KEY_F, ALLEGRO_KEY_D, ALLEGRO_KEY_S, ALLEGRO_KEY_Z, ALLEGRO_KEY_X,
+									  ALLEGRO_KEY_A ] ) );
+			/+
+			// Sean's keys
+			unitList.append( new Ship( shipGfx1, shipBlowGfx1, -1, -1,
+									  [ALLEGRO_KEY_W, ALLEGRO_KEY_D, ALLEGRO_KEY_S, ALLEGRO_KEY_A,
+									   ALLEGRO_KEY_LSHIFT, ALLEGRO_KEY_ALT, ALLEGRO_KEY_SPACE ] ) );
+			+/
+		}
 
-		unitList.append( new Ship( shipGfx2, shipBlowGfx2, -1, -1,
-			[ALLEGRO_KEY_UP, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_DOWN, ALLEGRO_KEY_LEFT,
-			ALLEGRO_KEY_RCTRL, ALLEGRO_KEY_RSHIFT, ALLEGRO_KEY_END ] ) );
+		void player2() {
+			/+
+			unitList.append( new Ship( shipGfx2, shipBlowGfx2, -1, -1,
+									       [ALLEGRO_KEY_UP, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_DOWN, ALLEGRO_KEY_LEFT,
+									  ALLEGRO_KEY_SLASH, ALLEGRO_KEY_FULLSTOP, ALLEGRO_KEY_COMMA ] ) );
+			+/
+			unitList.append( new Ship( shipGfx2, shipBlowGfx2, -1, -1,
+				[ALLEGRO_KEY_UP, ALLEGRO_KEY_RIGHT, ALLEGRO_KEY_DOWN, ALLEGRO_KEY_LEFT,
+				ALLEGRO_KEY_RCTRL, ALLEGRO_KEY_RSHIFT, ALLEGRO_KEY_SLASH ] ) );
+		}
 
-		unitList.append( new Ship( shipGfx3, shipBlowGfx3, -1, -1,
-							[ALLEGRO_KEY_PAD_8, ALLEGRO_KEY_PAD_6, ALLEGRO_KEY_PAD_5, ALLEGRO_KEY_PAD_4,
-			ALLEGRO_KEY_PAD_1, ALLEGRO_KEY_PAD_2,
-			ALLEGRO_KEY_MENU] ) );
+		// incomplete from now on
+		void player3() {
+			unitList.append( new Ship( shipGfx3, shipBlowGfx3, -1, -1,
+									  [ALLEGRO_KEY_PAD_8, ALLEGRO_KEY_PAD_6, ALLEGRO_KEY_PAD_5, ALLEGRO_KEY_PAD_4,
+									  ALLEGRO_KEY_PAD_1, ALLEGRO_KEY_PAD_2,
+									  ALLEGRO_KEY_PAD_3 ] ) );
+		}
 
-		(cast(Ship)unitList[0]).faceAngle = getAngle( unitList[0].xpos, unitList[0].ypos, unitList[1].xpos, unitList[1].ypos );
-		(cast(Ship)unitList[1]).faceAngle = getAngle( unitList[1].xpos, unitList[1].ypos, unitList[0].xpos, unitList[0].ypos );
-		(cast(Ship)unitList[2]).faceAngle = getAngle(0,0, 5,5);
+		void player4() {
+			unitList.append( new Ship( shipGfx3, shipBlowGfx3, -1, -1,
+									  [ALLEGRO_KEY_I, ALLEGRO_KEY_L, ALLEGRO_KEY_K, ALLEGRO_KEY_J,
+									  ALLEGRO_KEY_B, ALLEGRO_KEY_N,
+									  ALLEGRO_KEY_M ] ) );
+		}
 
+		//#set number of players
+		const numPlayers = 2; // 4 max
+		foreach(addPlayer; [&player1, &player2, &player3, &player4][0..numPlayers])
+			addPlayer();
+
+		void playerFacing1() {
+			//(cast(Ship)unitList[0]).faceAngle = getAngle( unitList[0].xpos, unitList[0].ypos, unitList[1].xpos, unitList[1].ypos );
+			(cast(Ship)unitList[0]).faceAngle = getAngle(0,0, 5,0);
+		}
+		void playerFacing2() {
+			(cast(Ship)unitList[1]).faceAngle = getAngle(0,0, -5,0); //getAngle( unitList[1].xpos, unitList[1].ypos, unitList[0].xpos, unitList[0].ypos );
+		}
+		void playerFacing3() {
+			(cast(Ship)unitList[2]).faceAngle = getAngle(0,0, 5,5);
+		}
+		void playerFacing4() {
+			(cast(Ship)unitList[3]).faceAngle = getAngle(0,0, 5,5);
+		}
+		foreach(facePlayer; [&playerFacing2, &playerFacing2, &playerFacing3, &playerFacing4][0..numPlayers])
+			facePlayer();
 		fps = new Fps(`fonts\ddrocr.bmp`);
 		
 		popUp = new PopUp( board, unitList );
@@ -106,24 +151,43 @@ class SetUp {
 		foreach( y; 0 .. 13)
 			foreach( x; 0 .. 6)
 				g_frameGfx[y][x] = getSlice( 108 + x * 8, 90 + y * 8 ),
-				g_frameGfx[y][x].resize( 8 * 3, 8 * 3 );
+				g_frameGfx[y][x].resize( 8 * 3, 8 * 3 );    
 
 		Ship[] ships;
-		foreach(ship; unitList[0..3])
+		foreach(ship; unitList[0..2]) //3])
 			ships ~= cast(Ship)ship;
 		gameOver = new GameOver(ships);
 
 		display = new Display( board, unitList, fps, gameOver, g_debugInfo );
 
+		g_snds.length = 0;
 		foreach( snd; "shoot.wav blowup.wav".split )
 			g_snds ~= new Snd( `sfx\` ~ snd );
 
+		g_smallBlows.length = 0;
 		foreach( snd; "dumb.ogg dumb2.ogg dumb3.ogg".split )
 			g_smallBlows ~= new Snd( `sfx\smallExplosions\` ~ snd );
 
+		g_win.length = 0;
+		foreach( snd; "SeanWinHaha.wav SeanWinHaha2.wav".split )
+			g_win ~= new Snd( `sfx\` ~ snd );
+
+//		foreach( snd; "Start.wav Start2.wav".split )
+//			g_start ~= new Snd( `sfx\` ~ snd );
+
+		g_lazerShots.length = 0;
+		foreach( snd; "shoot.wav".split )
+//		foreach( snd; "lazerfire.wav".split )
+			g_lazerShots ~= new Snd( `sfx\` ~ snd );
+
+		g_startGame.length = 0;
+		foreach( snd; "startGame.wav".split )
+			g_startGame ~= new Snd( `sfx\` ~ snd );
+
 		pointer = new Pointer(board);
 
-		//#morris
+		//#morriss
 		g_morris = new Snd(`sfx\smallExplosions\0.wav`);
 	}
+
 }
